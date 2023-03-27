@@ -1,3 +1,4 @@
+import config from '~/config';
 import TrangChu from '~/pages/TrangChu';
 import QuanLyVe from '~/pages/QuanLyVe';
 import DoiSoatVe from '~/pages/DoiSoatVe';
@@ -7,13 +8,13 @@ import CaiDat from '~/pages/CaiDat';
 import GoiDichVu from '~/pages/GoiDichVu';
 // Public
 const publicRoutes = [
-    { path: '/', component: TrangChu },
-    { path: '/quanlyve', component: QuanLyVe },
-    { path: '/doisoatve', component: DoiSoatVe },
-    { path: '/danhsachsukien', component: DanhSachSuKien },
-    { path: '/quanlythietbi', component: QuanLyThietBi },
-    { path: '/caidat', component: CaiDat },
-    { path: '/goidichvu', component: GoiDichVu },
+    { path: config.routes.home, component: TrangChu },
+    { path: config.routes.quanlyve, component: QuanLyVe },
+    { path: config.routes.doisoatve, component: DoiSoatVe },
+    { path: config.routes.danhsachsukien, component: DanhSachSuKien },
+    { path: config.routes.quanlythietbi, component: QuanLyThietBi },
+    { path: config.routes.caidat, component: CaiDat },
+    { path: config.routes.goidichvu, component: GoiDichVu },
 ];
 
 const privateRoutes = [];

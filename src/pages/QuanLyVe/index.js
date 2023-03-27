@@ -1,5 +1,5 @@
 function QuanLyVe() {
-    return <h2>Quản lý vé</h2>;
+    return <h2>Danh Sách Vé</h2>;
 }
 
 export default QuanLyVe;
