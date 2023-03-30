@@ -11,6 +11,8 @@ const images = {
     check_ticket: require('~/assets/images/check_ticket.svg').default,
     setting: require('~/assets/images/setting.svg').default,
     copy: require('~/assets/images/copy.svg').default,
+    calendar: require('~/assets/images/calendar.svg').default,
+    filter : require('~/assets/images/filter.svg').default,
 };
 
 export default images;
