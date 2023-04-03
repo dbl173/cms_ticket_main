@@ -1,65 +1,25 @@
-import React from "react";
-import { Pie } from 'react-chartjs-2'
+import React from 'react';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,  } from 'recharts';
 
+const data = [
+  { day: 'Thứ 2', sales: 140,  leftColumn: 140 },
+  { day: 'Thứ 3', sales: 180,  leftColumn: 180 },
+  { day: 'Thứ 4', sales: 190, leftColumn: 220 },
+  { day: 'Thứ 5', sales: 220,  leftColumn: 260 },
+  { day: 'Thứ 6', sales: 240,  leftColumn: 260 },
+  { day: 'Thứ 7', sales: 200,  leftColumn: 260 },
+  { day: 'Chủ nhật', sales: 220,  leftColumn: 260 },
+];
 
-const BarChart = () => {
-    return (
-      <div>
-        <Pie
-          data={{
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [
-              {
-                label: '# of votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)',
-                  'rgba(255, 206, 86, 0.2)',
-                  'rgba(75, 192, 192, 0.2)',
-                  'rgba(153, 102, 255, 0.2)',
-                  'rgba(255, 159, 64, 0.2)',
-                ],
-                borderColor: [
-                  'rgba(255, 99, 132, 1)',
-                  'rgba(54, 162, 235, 1)',
-                  'rgba(255, 206, 86, 1)',
-                  'rgba(75, 192, 192, 1)',
-                  'rgba(153, 102, 255, 1)',
-                  'rgba(255, 159, 64, 1)',
-                ],
-                borderWidth: 1,
-              },
-              // {
-              //   label: 'Quantity',
-              //   data: [47, 52, 67, 58, 9, 50],
-              //   backgroundColor: 'orange',
-              //   borderColor: 'red',
-              // },
-            ],
-          }}
-          height={400}
-          width={600}
-          options={{
-            maintainAspectRatio: false,
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    beginAtZero: true,
-                  },
-                },
-              ],
-            },
-            legend: {
-              labels: {
-                fontSize: 25,
-              },
-            },
-          }}
-        />
-      </div>
-    )
-  }
+const Chart = () => (
+  <LineChart width={1000} height={200} data={data}>
+    <XAxis dataKey="day" />
+    <YAxis yAxisId="left" domain={[140, 260]} />
+    <CartesianGrid strokeDasharray="0 3" />
+    <Tooltip />
+    <Line yAxisId="left" type="monotone" dataKey="sales" stroke="#8884d8" />
+    
+  </LineChart>
+);
 
-export default BarChart
+export default Chart;

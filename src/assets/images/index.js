@@ -13,6 +13,7 @@ const images = {
     copy: require('~/assets/images/copy.svg').default,
     calendar: require('~/assets/images/calendar.svg').default,
     filter : require('~/assets/images/filter.svg').default,
+    bacham : require('~/assets/images/bacham.svg').default,
 };
 
 export default images;

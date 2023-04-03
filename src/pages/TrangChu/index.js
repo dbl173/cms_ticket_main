@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import styles from './trangchu.scss'
 import React from 'react';
 import images from '~/assets/images';
-// import BarChart from './Chart/index';
+import Chart from './Chart';
 
 
 
@@ -24,7 +24,15 @@ function TrangChu() {
         </div> 
          
             <div className={cx('chart')}>
-                {/* <BarChart></BarChart> */}
+                <Chart/>
+            </div>
+            <div className={cx('sub-nav')}>
+                <h1>Tổng doanh thu theo tuần</h1>
+                <h2>525.145.000<p>đồng</p></h2> 
+            </div>
+            <div className={cx('calender-2')}> 
+                <p>Tháng 4, 2021</p> 
+                <img src={images.calendar} alt="calender" />
             </div>
     </div>
     );
