@@ -5,8 +5,8 @@ import './Table.scss';
 const dataMock: ITicket[] = [
     {
         ticketPackCode: 'PACK',
-        ticketNo: 'A',
-        bookingCode: 'BOOKINGCODE',
+        ticketNo: '123456789034',
+        bookingCode: 'ALTFGHJU',
         status: ETicketStatus.available,
         usageDate: new Date(),
         ticketOutDate: new Date(),
@@ -14,8 +14,8 @@ const dataMock: ITicket[] = [
     },
     {
         ticketPackCode: 'PACK',
-        ticketNo: 'A',
-        bookingCode: 'BOOKINGCODE',
+        ticketNo: '236784631642',
+        bookingCode: 'ALTOJMNB',
         status: ETicketStatus.available,
         usageDate: new Date(),
         ticketOutDate: new Date(),
@@ -23,8 +23,8 @@ const dataMock: ITicket[] = [
     },
     {
         ticketPackCode: 'PACK',
-        ticketNo: 'A',
-        bookingCode: 'BOOKINGCODE',
+        ticketNo: '487621489474',
+        bookingCode: 'ALTQTYJH',
         status: ETicketStatus.available,
         usageDate: new Date(),
         ticketOutDate: new Date(),
@@ -32,8 +32,8 @@ const dataMock: ITicket[] = [
     },
     {
         ticketPackCode: 'PACK',
-        ticketNo: 'A',
-        bookingCode: 'BOOKINGCODE',
+        ticketNo: '156464891479',
+        bookingCode: 'ALTCFSDF',
         status: ETicketStatus.available,
         usageDate: new Date(),
         ticketOutDate: new Date(),
@@ -41,8 +41,8 @@ const dataMock: ITicket[] = [
     },
     {
         ticketPackCode: 'PACK',
-        ticketNo: 'A',
-        bookingCode: 'BOOKINGCODE',
+        ticketNo: '201649631896',
+        bookingCode: 'ALTIOJNB',
         status: ETicketStatus.expired,
         usageDate: new Date(),
         ticketOutDate: new Date(),
@@ -50,8 +50,8 @@ const dataMock: ITicket[] = [
     },
     {
         ticketPackCode: 'PACK',
-        ticketNo: 'A',
-        bookingCode: 'BOOKINGCODE',
+        ticketNo: '148920121478',
+        bookingCode: 'ALTVDFTR',
         status: ETicketStatus.available,
         usageDate: new Date(),
         ticketOutDate: new Date(),
@@ -59,8 +59,8 @@ const dataMock: ITicket[] = [
     },
     {
         ticketPackCode: 'PACK',
-        ticketNo: 'A',
-        bookingCode: 'BOOKINGCODE',
+        ticketNo: '654115684899',
+        bookingCode: 'ALTLIOVF',
         status: ETicketStatus.used,
         usageDate: new Date(),
         ticketOutDate: new Date(),
@@ -102,7 +102,6 @@ const Table: React.FC<{ data?: Array<any>; displayColumns: Array<IColumn> }> = (
                         </tr>
                     );
                 })}
-                
             </tbody>
         </table>
     );
