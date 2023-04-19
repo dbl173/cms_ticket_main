@@ -39,17 +39,17 @@ const Graph: React.FC<{ height?: number }> = ({ height = 320 }) => {
         },
         maintainAspectRatio: false,
         scales: {
-                x: {
-                    grid: {
-                        color: "rgba(0,0,0,0)"
-                    }
-                },
-                y: {
-                    grid: {
-                        color: "rgba(0,0,0,0.1)"
-                    }
+            x: {
+                grid: {
+                    color: 'rgba(0,0,0,0)',
                 },
             },
+            y: {
+                grid: {
+                    color: 'rgba(0,0,0,0.1)',
+                },
+            },
+        },
     };
     return (
         <div className="graph">

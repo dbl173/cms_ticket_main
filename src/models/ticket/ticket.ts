@@ -1,5 +1,5 @@
 export enum ETicketStatus {
-    used = 'Used',
+    used = 'Hết hạn',
     available = 'Đã sử dụng',
     expired = 'Chưa sử dụng',
 }

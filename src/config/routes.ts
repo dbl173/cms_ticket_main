@@ -3,7 +3,6 @@ const routes = {
     ticket: '/ticket',
     check: '/check',
     setting: '/setting',
-
 };
 
 export default routes;

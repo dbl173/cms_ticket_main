@@ -1,9 +1,9 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, Tooltip, Legend, ArcElement } from 'chart.js';
-import "./Piechart.scss"
+import './Piechart.scss';
 
-const Piechart: React.FC<{ size?: number, label?: string}> = ({ size = 240, label }) => {
+const Piechart: React.FC<{ size?: number; label?: string }> = ({ size = 240, label }) => {
     ChartJS.register(ArcElement, Tooltip, Legend);
     const data = {
         labels: ['Vé đã sử dụng', 'Vé chưa sử dụng'],
@@ -13,6 +13,7 @@ const Piechart: React.FC<{ size?: number, label?: string}> = ({ size = 240, labe
                 data: [13568, 56024],
                 backgroundColor: ['#FF993B', '#27AEF9'],
                 hoverOffset: 4,
+                // borderAlign: 'inner',
             },
         ],
     };

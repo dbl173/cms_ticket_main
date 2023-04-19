@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Check: React.FC = () => {
-  return (
-    <div>Check</div>
-  )
-}
+    return <div>Check</div>;
+};
 
-export default Check
+export default Check;
