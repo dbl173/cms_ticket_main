@@ -1,0 +1,60 @@
+.container{
+    .top{
+        height: 10%;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        
+        .search-container{  
+            position: relative;
+            margin: 17px 0;
+            width: 87%;
+           
+        }
+        .notification-container{
+            margin-left: 30%;
+            display: flex;
+            flex-direction: row; 
+            position: relative; 
+            .mail{
+                svg{
+                    padding: 30px;
+                    
+                }
+            }
+            .noti{
+                svg{
+                    width: 48px;
+                    padding: 30px 50px 30px 30px;
+                }
+            }
+            .profile{
+                margin-top: 10px;
+                margin-right: 10%;
+                img{
+                    margin:20px;
+                }
+            }
+        }
+    }
+    .bottom{
+        height: 90%;
+        .content{
+            
+            width: 97%;
+            height: 95%;
+            background: #FFFFFF;
+            border-radius: 24px;
+            overflow: auto;
+            overflow-x: auto;
+            overflow-y: auto;
+            .page-content {
+              border-radius: 24px;
+              height: 915px;
+              color: black;
+              
+          }
+          }
+          
+    }
+}
