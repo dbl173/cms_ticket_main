@@ -1,49 +1,66 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter, Routes } from 'react-router-dom';
-import Container from './layout/container/mainContainer';
-import NavBarController from './layout/nav/mainNav';
-import { initializeApp } from 'firebase/app';
-import { getDatabase, onValue, ref } from 'firebase/database';
-import  config  from './firebase/config';
-import { useDispatch } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { actionCreators } from './state'
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { getAllTickets, getChartData, revenue, revenueByDate } from "./api/crudData";
+import { generateTicket, generateTicketPackages } from "./api/generateData";
+import Content from "./components/Content";
+import DatePicker from "./components/DatePicker";
+import Filter from "./components/Filter";
+import Header from "./components/Header";
+import SideBar from "./components/SideBar";
+import TicketModal from "./components/TicketModal";
+import ChangeDateModal from "./components/TicketModal/ChangeDateModal";
+import "antd/dist/antd.css";
+import "./scss/app.scss";
+import { ModalStatus } from "./slice/ModalSlice";
+import { RootState } from "./store";
+import { filter } from "./utils/filter";
+import Loading from "./components/Loading";
+import { getDateBefore } from "./utils/dateTime";
 
 function App() {
-  const dispatch = useDispatch();
-  const { fetchFirebase, fetchFirebaseSuccess, fetchFirebaseDefault } =
-      bindActionCreators(actionCreators, dispatch);
-
+  const modalState = useSelector((state: RootState) => state.modal.modalState);
+  const filterParams = useSelector((state: RootState) => state.filter.filter);
+  
   useEffect(() => {
-      fetchFirebase();
-      const app = initializeApp(config);
+    // filter({
+    //   checkInPorts: ["c__c1"],
+    //   status: 1,
+    // })
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((e) => {
+    //     console.log(e);
+    //   });
+    // generateTicket()
+    // generateTicketPackages()
 
-      const d = getDatabase(app);
-      const starCountRef = ref(d, 'data/');
-
-      onValue(starCountRef, (snapshot) => {
-          const data = snapshot.val();
-          if (data) {
-              fetchFirebaseSuccess(data);
-          } else {
-              fetchFirebaseDefault();
-          }
-      });
   }, []);
 
-
-  
+  const Layer = () => {
+    return (
+      <div
+        className={
+          modalState !== ModalStatus.HIDDEN_MODAL
+            ? "layer layer--display"
+            : "layer"
+        }
+      ></div>
+    );
+  };
   return (
-    <div className="main">
-      <BrowserRouter>
+    <div className="app">
+      <Header />
 
-          <NavBarController />
-          <Container />
-         
-      </BrowserRouter>
-      
-      
-      
+      <div className="app__main">
+        <SideBar />
+        <Content />
+      </div>
+      <Layer />
+      <Filter />
+      <TicketModal />
+      <ChangeDateModal/>
+      <Loading/>
     </div>
   );
 }
